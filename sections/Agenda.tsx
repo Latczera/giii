@@ -28,7 +28,7 @@ const Agenda: React.FC<AgendaProps> = ({ selectedServices }) => {
   useEffect(() => {
     const slots: string[] = [];
     for (let hour = START_HOUR; hour <= END_HOUR; hour++) {
-      for (let minute = 0; minute < 60; minute += 30) {
+      for (let minute = 0; minute < 60; minute += 60) {
         const isLunchBlock = (hour === 13) || (hour === 14 && minute < 30);
         if (!isLunchBlock) {
           const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
